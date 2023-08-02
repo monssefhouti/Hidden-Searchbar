@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Rubik", sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+  background-color: #3498db;
+  color: white;
+}
+
+.search {
+  display: flex;
+  transition: all 1s ease;
+  z-index: 1;
+  &__input {
+    border: none;
+    //width: 400px;
+    width: 0;
+    //padding: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    transition-duration: 0.5s;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    transition: all 1s ease;
+    &:focus {
+      outline: none;
+      border-bottom-left-radius: 10px;
+      border-top-left-radius: 10px;
+    }
+  }
+  &__btn {
+    background-color: royalblue;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    //border-radius: 0 10px 10px 0;
+    cursor: pointer;
+    transition: all 1s ease;
+    &:focus {
+      outline: none;
+    }
+    &:hover {
+      background-color: white;
+      svg {
+        fill: royalblue;
+      }
+    }
+    &--icon {
+      height: 50px;
+      width: 50px;
+      fill: white;
+    }
+  }
+
+  &.active &__input {
+    width: 400px;
+    transition: width 1s;
+    padding: 10px;
+  }
+
+  &.active &__btn {
+    background-color: white;
+    border-radius: 0 10px 10px 0;
+    svg {
+      fill: royalblue;
+    }
+  }
+}

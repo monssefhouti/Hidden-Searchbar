@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Rubik", sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+  background-color: #3498db;
+  color: white;
+}
+
+.search {
+  display: flex;
+  transition: all 1s ease;
+  z-index: 1;
+}
+.search__input {
+  border: none;
+  width: 0;
+  font-size: 20px;
+  font-weight: 600;
+  transition-duration: 0.5s;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  transition: all 1s ease;
+}
+.search__input:focus {
+  outline: none;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+}
+.search__btn {
+  background-color: royalblue;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 1s ease;
+}
+.search__btn:focus {
+  outline: none;
+}
+.search__btn:hover {
+  background-color: white;
+}
+.search__btn:hover svg {
+  fill: royalblue;
+}
+.search__btn--icon {
+  height: 50px;
+  width: 50px;
+  fill: white;
+}
+.search.active .search__input {
+  width: 400px;
+  transition: width 1s;
+  padding: 10px;
+}
+.search.active .search__btn {
+  background-color: white;
+  border-radius: 0 10px 10px 0;
+}
+.search.active .search__btn svg {
+  fill: royalblue;
+}
+
+.footer {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  position: fixed;
+  bottom: 0;
+  padding: 20px;
+  background-color: white;
+  z-index: 100;
+}
+.footer .copyright__text {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+}
+.footer .copyright__text svg {
+  height: 2vh;
+  width: 2vw;
+  fill: red;
+  margin: 0 -1px;
+}
+@media (max-width: 574px) {
+  .footer .copyright__text svg {
+    height: 4vh;
+    width: 4vw;
+    margin: 0 5px;
+  }
+}
+.footer .copyright__text a {
+  color: #3498db;
+  text-decoration: none;
+  padding: 0 0.2vw;
+}
+.footer .copyright__text a:hover {
+  color: red;
+}
